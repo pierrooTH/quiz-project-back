@@ -11,8 +11,8 @@ const Response = require('./Response')(sequelize)
 Category.hasMany(Quiz);
 Quiz.belongsTo(Category);
 
-Question.hasMany(Quiz);
-Quiz.belongsTo(Question);
+Quiz.hasMany(Question);
+Question.belongsTo(Quiz);
 
 Question.hasOne(Response);
 

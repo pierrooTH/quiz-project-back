@@ -4,9 +4,17 @@ faker.locale = 'fr';
 console.log(`Checking database connection...`);
 
 const generateCategory = () => {
-    for (let i = 1; i<= 10; i++) {
+    for (let i = 1; i<= 5; i++) {
         sequelize.models.Category.create({
             title: faker.random.words(1)
+        })
+    }
+}
+
+const generateQuiz = () => {
+    for (let i = 1; i<= 10; i++) {
+        sequelize.models.Quiz.create({
+            title: faker.random.words(5)
         })
     }
 }
@@ -19,6 +27,7 @@ sequelize.authenticate()
         // insertion de données 
         // pour avoir un modèle on va passer par l'instance de Sequelize
         generateCategory();
+        generateQuiz();
         
     })
 })

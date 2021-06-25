@@ -2,7 +2,7 @@ const {DataTypes} = require ('sequelize');
 
 module.exports = (sequelize) => sequelize.define('Question', {
     title: {
-        type: DataTypes.STRING(180),
+        type: DataTypes.TEXT(),
         allowNull: false
     }
 }, {
