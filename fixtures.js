@@ -6,15 +6,20 @@ console.log(`Checking database connection...`);
 const generateCategory = () => {
     for (let i = 1; i<= 5; i++) {
         sequelize.models.Category.create({
-            title: faker.random.words(1)
+            title: faker.random.words(1),
         })
     }
+}
+
+const randomNumberForCategoryId = (min, max) => {
+ return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 const generateQuiz = () => {
     for (let i = 1; i<= 10; i++) {
         sequelize.models.Quiz.create({
-            title: faker.random.words(5)
+            title: faker.random.words(5),
+            CategoryId: randomNumberForCategoryId(1, 5)
         })
     }
 }
